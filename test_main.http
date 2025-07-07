@@ -1,9 +1,50 @@
-# Test your FastAPI endpoints
+# File ini berisi skenario pengujian untuk API Generator Konten.
+# Anda bisa menjalankan setiap request dengan mengklik ikon "play" hijau di sebelah kiri.
 
-GET http://127.0.0.1:8000/
-Accept: application/json
-###
+### Skenario 1: Artikel Blog Teknis
+# Menguji kemampuan untuk menghasilkan konten panjang yang terstruktur.
+POST http://127.0.0.1:8000/generate/content
+Content-Type: application/json
 
-GET http://127.0.0.1:8000/hello/User
-Accept: application/json
-###
+{
+  "topic": "Peran Reinforcement Learning dalam Otomatisasi Gudang (Warehouse Automation)",
+  "tone": "Informatif dan Profesional",
+  "target_platform": "Artikel Blog",
+  "max_tokens": 700
+}
+
+### Skenario 2: Caption Media Sosial (LinkedIn)
+# Menguji kemampuan untuk menghasilkan teks pendek dan menarik.
+POST http://127.0.0.1:8000/generate/content
+Content-Type: application/json
+
+{
+  "topic": "Mengumumkan proyek baru: API untuk generasi konten otomatis berbasis AI",
+  "tone": "Antusias dan To-the-Point",
+  "target_platform": "Postingan LinkedIn",
+  "max_tokens": 200
+}
+
+### Skenario 3: Copywriting (Teks Iklan Produk)
+# Menguji kemampuan untuk menghasilkan teks yang persuasif.
+POST http://127.0.0.1:8000/generate/content
+Content-Type: application/json
+
+{
+  "topic": "Teks iklan singkat untuk layanan API yang bisa membuat artikel dan caption secara otomatis, menargetkan content creator dan marketer.",
+  "tone": "Persuasif dan menonjolkan manfaat (hemat waktu & biaya)",
+  "target_platform": "Teks Iklan Facebook",
+  "max_tokens": 250
+}
+
+### Skenario 4: Penjelasan Jurnal / Konsep Teknis
+# Menguji kemampuan untuk menyederhanakan topik kompleks.
+POST http://127.0.0.1:8000/generate/content
+Content-Type: application/json
+
+{
+  "topic": "Jelaskan konsep dasar dari algoritma PPO (Proximal Policy Optimization) dalam Reinforcement Learning untuk audiens pemula.",
+  "tone": "Edukasi dan Jelas",
+  "target_platform": "Bagian penjelasan untuk jurnal atau artikel tutorial",
+  "max_tokens": 400
+}
